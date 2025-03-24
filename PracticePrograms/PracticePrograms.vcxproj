@@ -154,6 +154,7 @@
     <ClCompile Include="SortingAlgorithms.cpp" />
     <ClCompile Include="StackUsingArray.cpp" />
     <ClCompile Include="StackUsingLinkedList.cpp" />
+    <ClCompile Include="Trie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayADT.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="SortingAlgorithms.h" />
     <ClInclude Include="StackUsingArray.h" />
     <ClInclude Include="StackUsingLinkedList.h" />
+    <ClInclude Include="Trie.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
