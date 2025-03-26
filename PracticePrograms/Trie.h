@@ -29,6 +29,12 @@ class Trie
 	// Recursive helper function to delete a word from the Trie.
 	bool deleteHelper(TrieNode* node, const std::string &word, int index);
 
+	// Recursive function to find longest common prefix in the trie
+	void LCPHelper(TrieNode* node, std::string& lcp);
+
+	// Recursive helper to delete all nodes in the Trie.
+	void deleteTrie(TrieNode* node);
+
 public:
 
 	//constructor
@@ -45,6 +51,9 @@ public:
 
 	// This function deletes a word from the Trie.
 	bool Delete(const std::string &word);
+
+	// Function to find longest common prefix in the trie
+	void LCP(std::string &lcp);
 
 	// Destructor
 	~Trie();

@@ -146,7 +146,37 @@ bool Trie::Delete(const std::string& word)
 }
 
 //-----------------------------------------------------------------------------
-// Destructor: Recursively deletes all nodes to free memory.
+
+void Trie::LCPHelper(TrieNode* node, std::string& lcp)
+{
+	while (node && node->m_children.size() == 1 && !node->isLeafNode)
+	{
+		auto it = node->m_children.begin();  
+		lcp.push_back(it->first);           
+		node = it->second;                  
+	}
+}
+
+//-----------------------------------------------------------------------------
+
+void Trie::LCP(std::string &lcp)
+{
+	LCPHelper(m_root, lcp);
+}
+
+//-----------------------------------------------------------------------------
+
+void Trie::deleteTrie(TrieNode* node)
+{
+	for (auto& child : node->m_children)
+	{
+		deleteTrie(child.second);
+	}
+	delete node;
+}
+
+//-----------------------------------------------------------------------------
+
 Trie::~Trie()
 {
 	delete m_root;
